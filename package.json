@@ -1,0 +1,24 @@
+{
+  "name": "oauth2-discord-bot-clean",
+  "version": "5.9.8",
+  "private": true,
+  "description": "Discord OAuth2 verification bot for desktop, Android/Termux, VPS, and bot-hosting platforms with encrypted storage, one-time OAuth flow state, lifecycle locking, bulk-job recovery, and hardened HTTP security.",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js",
+    "check": "node --check index.js && node --check src/commands.js && node --check src/config.js && node --check src/http.js && node --check src/interactions.js && node --check src/jobs.js && node --check src/oauth.js && node --check src/smart.js && node --check src/store.js && node --check src/ui.js && node --check tests/test-env.js && node --check tests/self-test.js && node --check tests/release-audit.js && node --check tests/deep-audit.js && node --check tests/dependency-stub-loader.js && node --check tests/command-runtime-audit.js && node --check tests/interaction-runtime-audit.js && node --check tests/jobs-runtime-audit.js && node --check public/app.js",
+    "test": "node tests/self-test.js && node tests/behavior-audit.js && node tests/command-runtime-audit.js && node tests/interaction-runtime-audit.js && node tests/jobs-runtime-audit.js",
+    "audit": "node tests/release-audit.js",
+    "deep-audit": "node tests/deep-audit.js",
+    "register": "node src/commands.js"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "discord.js": "14.27.0",
+    "express": "5.2.1",
+    "express-rate-limit": "8.7.0"
+  }
+}
